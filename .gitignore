@@ -1,0 +1,18 @@
+# Large model files and checkpoints
+isl_text2sign/models/*.pt
+isl_text2sign/models/checkpoints/*.pt
+*.pyc
+__pycache__/
+
+# Large dataset files (download separately)
+isl_text2sign/data/raw_videos/*
+!isl_text2sign/data/raw_videos/.gitkeep
+isl_sign2text/data_npz/*.npz
+isl_sign2text/data/images/
+
+# Output files
+output.mp4
+*.mp4
+
+# IDE
+.vscode/
