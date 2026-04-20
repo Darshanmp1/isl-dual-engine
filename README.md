@@ -73,7 +73,14 @@ The system implements a tiered classification strategy to balance inference spee
 
 ## Installation and Deployment
 
-### 1. Environment Configuration
+### 1. Repository Setup
+Clone the localized repository and navigate into the project directory:
+```bash
+git clone https://github.com/Darshanmp1/isl-dual-engine.git
+cd isl-dual-engine
+```
+
+### 2. Environment Configuration
 It is recommended to use an isolated environment for dependency management:
 ```bash
 conda create -n isl_env python=3.10
@@ -81,14 +88,26 @@ conda activate isl_env
 pip install -r backend/requirements.txt
 ```
 
-### 2. Backend Execution
+### 3. Dataset Configuration
+Due to the significant size of the video and landmark datasets, they are hosted externally. Follow these steps to initialize the asset library:
+
+#### Text-to-Sign Assets (ISL Videos)
+- **Dataset**: Indian Sign Language Animated Videos
+- **Source**: [Kaggle - Indian Sign Language Animated Videos](https://www.kaggle.com/datasets/vaibhavshukla182/indian-sign-language-animated-videos)
+- **Deployment**: Extract the downloaded MP4 files to `isl_text2sign/data/raw_videos/`.
+
+#### Sign-to-Text Training Data (Optional)
+- **Purpose**: Required only if you intend to retrain the SVM or CNN models.
+- **Inference**: For standard use, pre-trained binaries are already provided in `isl_sign2text/models/`.
+
+### 4. Backend Execution
 Initialize the Flask server:
 ```bash
 cd backend
 python app.py
 ```
 
-### 3. Frontend Execution
+### 5. Frontend Execution
 Launch the React development server:
 ```bash
 cd frontend
@@ -96,7 +115,7 @@ npm install
 npm run dev
 ```
 
----
+> Access the application via the local proxy at `http://localhost:5173`.
 
 ## Directory Structure
 ```text
