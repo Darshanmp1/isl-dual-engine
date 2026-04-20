@@ -1,3 +1,20 @@
+# IDE & System
+.vscode/
+.DS_Store
+*.log
+
+# Virtual Environments (DO NOT PUSH)
+.conda/
+.venv/
+env/
+venv/
+backend/.venv/
+isl_sign2text/.venv/
+
+# Dependencies
+node_modules/
+frontend/dist/
+
 # Large model files and checkpoints
 isl_text2sign/models/*.pt
 isl_text2sign/models/checkpoints/*.pt
@@ -10,9 +27,10 @@ isl_text2sign/data/raw_videos/*
 isl_sign2text/data_npz/*.npz
 isl_sign2text/data/images/
 
-# Output files
+# Output and Local Documentation
 output.mp4
 *.mp4
-
-# IDE
-.vscode/
+ARCHITECTURE.md
+INTERVIEW_QUESTIONS.md
+verify_frontend_integration.py
+main_app.py

@@ -2,7 +2,8 @@
 # Streamlit ISL Translator - Text to Sign Language Video
 
 import streamlit as st
-from isl_mapper import build_video_map, text_to_sign_video
+
+from isl_text2sign.src.isl_mapper import build_video_map, text_to_sign_video
 
 st.set_page_config(page_title="ISL Translator", page_icon="🧏‍♀️", layout="centered")
 

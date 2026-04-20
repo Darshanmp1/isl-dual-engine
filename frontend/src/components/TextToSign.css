@@ -1,0 +1,172 @@
+/* ═══════════════════════════════════════
+   TextToSign.css
+   ═══════════════════════════════════════ */
+
+.text-to-sign {
+  animation: slideUp 0.4s ease;
+}
+
+/* ── Grid ── */
+.t2s-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .t2s-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Input panel ── */
+.t2s-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.t2s-textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-glass);
+  background: var(--bg-glass);
+  color: var(--text-primary);
+  font-family: var(--font);
+  font-size: 1rem;
+  resize: vertical;
+  transition: border-color 0.2s;
+}
+.t2s-textarea::placeholder {
+  color: var(--text-muted);
+}
+.t2s-textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.t2s-error {
+  margin-top: 0.5rem;
+  color: var(--red);
+  font-size: 0.9rem;
+}
+
+/* ── Clip timeline ── */
+.clip-timeline {
+  margin-top: 1.25rem;
+}
+.timeline-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.timeline-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.chip {
+  display: inline-block;
+  padding: 0.3rem 0.65rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  color: var(--text-secondary);
+  transition: all 0.25s ease;
+}
+.chip-active {
+  background: rgba(99, 102, 241, 0.18);
+  border-color: var(--accent);
+  color: var(--accent-light);
+  animation: glow 1.8s ease infinite;
+}
+.chip-done {
+  background: rgba(34, 197, 94, 0.12);
+  border-color: var(--green);
+  color: var(--green);
+}
+
+/* ── Video panel ── */
+.video-panel-t2s .panel-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.video-panel-t2s .panel-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.video-wrapper-t2s {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #000;
+  aspect-ratio: 4 / 3;
+}
+
+.sign-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  background: #000;
+}
+
+.video-placeholder-t2s {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+
+/* ── Now playing ── */
+.now-playing {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  font-size: 0.9rem;
+}
+.now-label {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+.now-value {
+  font-weight: 700;
+  color: var(--accent-light);
+  flex: 1;
+}
+.now-counter {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.replay-btn {
+  margin-top: 1rem;
+  width: 100%;
+}
