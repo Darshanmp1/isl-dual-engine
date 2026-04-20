@@ -93,7 +93,7 @@ Due to the significant size of the video and landmark datasets, they are hosted 
 
 #### Text-to-Sign Assets (ISL Videos)
 - **Dataset**: Indian Sign Language Animated Videos
-- **Source**: [Kaggle - Indian Sign Language Animated Videos](https://www.kaggle.com/datasets/vaibhavshukla182/indian-sign-language-animated-videos)
+- **Source**: [Kaggle - Indian Sign Language Animated Videos](https://www.kaggle.com/datasets/koushikchouhan/indian-sign-language-animated-videos)
 - **Deployment**: Extract the downloaded MP4 files to `isl_text2sign/data/raw_videos/`.
 
 #### Sign-to-Text Training Data (Optional)
