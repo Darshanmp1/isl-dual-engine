@@ -33,11 +33,23 @@ CORS(app)
 # ─────────────────────────────────────
 # Paths
 # ─────────────────────────────────────
-BASE_DIR   = Path(__file__).resolve().parent.parent          # project root
-MODEL_PATH = BASE_DIR / "isl_sign2text" / "models" / "classifier.joblib"
-LABEL_PATH = BASE_DIR / "isl_sign2text" / "models" / "label_encoder.joblib"
-CNN_PATH   = BASE_DIR / "isl_sign2text" / "models" / "classifier_cnn.keras"
-VIDEO_DIR  = BASE_DIR / "isl_text2sign" / "data" / "raw_videos"
+BASE_DIR = Path(__file__).resolve().parent
+# In Docker, models are copied to /app/isl_sign2text/models
+# Locally, it is ../isl_sign2text/models
+MODEL_DIR = BASE_DIR / "isl_sign2text" / "models"
+if not MODEL_DIR.exists():
+    # Local fallback
+    MODEL_DIR = BASE_DIR.parent / "isl_sign2text" / "models"
+
+MODEL_PATH = MODEL_DIR / "classifier.joblib"
+LABEL_PATH = MODEL_DIR / "label_encoder.joblib"
+CNN_PATH   = MODEL_DIR / "classifier_cnn.keras"
+
+# Determine VIDEO_DIR
+VIDEO_DIR = BASE_DIR / "isl_text2sign" / "data" / "raw_videos"
+if not VIDEO_DIR.exists():
+    # Local fallback
+    VIDEO_DIR = BASE_DIR.parent / "isl_text2sign" / "data" / "raw_videos"
 
 # ─────────────────────────────────────
 # Load ML artefacts once at startup

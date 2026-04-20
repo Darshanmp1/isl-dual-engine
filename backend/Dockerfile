@@ -9,7 +9,7 @@ ENV PYTHONUNBUFFERED 1
 
 # Install system dependencies for OpenCV and MediaPipe
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    libgl1-mesa-glx \
+    libgl1 \
     libglib2.0-0 \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
@@ -18,11 +18,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 WORKDIR /app
 
 # Install dependencies
-COPY requirements.txt .
+COPY backend/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the backend code
-COPY . .
+# Copy the backend code
+COPY backend/ .
+
+# Copy the necessary model artifacts from the root
+COPY isl_sign2text/models/ /app/isl_sign2text/models/
 
 # Expose the Flask port
 EXPOSE 5000
