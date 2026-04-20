@@ -1,7 +1,7 @@
 # Smart AI-Powered ISL Translator
 > "Bridging the communication gap with a modern, real-time Flask-React architecture."
 
-> **Live Demo**: [Application URL](https://your-app-link-here.com)
+> **Live Demo**: [Application URL](https://isl-dual-engine-1.onrender.com/)
 
 [![System UI](https://img.shields.io/badge/UI-Modern-brightgreen)](https://github.com/Darshanmp1/isl-translator)
 [![Backend](https://img.shields.io/badge/Backend-Flask-blue)](https://github.com/Darshanmp1/isl-translator/tree/main/backend)
