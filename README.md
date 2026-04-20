@@ -150,6 +150,21 @@ isl-translator/
  
 ---
 
+## Model Training Pipeline (Advanced)
+For researchers and developers looking to extend the dataset or retrain the engines, the following utilities are provided in the `isl_sign2text/` directory:
+
+### 1. Data Collection
+- **`01_collect_dataset_modern_auto.py`**: Facilitates the recording of new sign language gestures via webcam. It automatically extracts 126-dimensional landmarks and saves them as normalized `.npz` files for training.
+
+### 2. Model Training
+- **`02_train_classifier_unified.py`**: The primary script for training the Support Vector Machine (SVM) classifier. It includes data cleaning and performance evaluation metrics.
+- **`03_train_cnn.py`**: Specifically used for training the 1D-Convolutional Neural Network (CNN) engine using the consolidated landmark datasets.
+
+### 3. Independent Verification
+- **`03_live_predict_modern_ui.py`**: A standalone real-time inference tool. Use this to verify model accuracy in a controlled environment before deploying to the Flask/React web stack.
+
+---
+
 ## Technology Stack
 - **Frontend**: React 18, Vite, CSS3
 - **Backend**: Flask, Flask-CORS, gTTS
