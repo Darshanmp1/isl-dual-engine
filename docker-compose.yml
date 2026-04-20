@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: isl-backend
+    ports:
+      - "5000:5000"
+    volumes:
+      # Mount the local videos folder into the container
+      - ./isl_text2sign/data/raw_videos:/app/isl_text2sign/data/raw_videos
+    restart: always
+
+  frontend:
+    build: ./frontend
+    container_name: isl-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: always

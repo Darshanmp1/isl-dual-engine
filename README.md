@@ -117,6 +117,25 @@ npm run dev
 
 > Access the application via the local proxy at `http://localhost:5173`.
 
+### 6. Deployment via Docker (Recommended for Production)
+The application is fully containerized using Docker and Docker Compose. This ensures environment consistency across different systems.
+
+#### Prerequisites
+- Docker Desktop or Docker Engine installed.
+- Ensure the ISL datasets are downloaded to the correct local path (see section 3).
+
+#### Launching the Containers
+From the project root, execute the following command:
+```bash
+docker-compose up --build
+```
+
+#### Access Points
+- **Frontend**: `http://localhost:80`
+- **Backend API**: `http://localhost:5000`
+
+> **Note**: The Docker setup automatically mounts your local sign videos into the container for real-time sequencing.
+
 ## Directory Structure
 ```text
 isl-translator/

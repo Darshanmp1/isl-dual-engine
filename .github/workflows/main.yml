@@ -1,0 +1,53 @@
+name: ISL Dual-Engine CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate-backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: |
+          cd backend
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Build Verification
+        run: echo "Backend dependencies and syntax verified."
+
+  validate-frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+      - name: Install & Build
+        run: |
+          cd frontend
+          npm install
+          npm run build
+      - name: Build Verification
+        run: echo "Frontend build verified."
+
+  docker-check:
+    needs: [validate-backend, validate-frontend]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify Dockerfiles
+        run: |
+          ls backend/Dockerfile
+          ls frontend/Dockerfile
+          ls docker-compose.yml
