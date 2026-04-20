@@ -1,6 +1,8 @@
 # Smart AI-Powered ISL Translator
 > "Bridging the communication gap with a modern, real-time Flask-React architecture."
 
+> **Live Demo**: [Application URL](https://your-app-link-here.com)
+
 [![System UI](https://img.shields.io/badge/UI-Modern-brightgreen)](https://github.com/Darshanmp1/isl-translator)
 [![Backend](https://img.shields.io/badge/Backend-Flask-blue)](https://github.com/Darshanmp1/isl-translator/tree/main/backend)
 [![Frontend](https://img.shields.io/badge/Frontend-React%20%2B%20Vite-61dafb)](https://github.com/Darshanmp1/isl-translator/tree/main/frontend)
@@ -135,6 +137,8 @@ docker-compose up --build
 - **Backend API**: `http://localhost:5000`
 
 > **Note**: The Docker setup automatically mounts your local sign videos into the container for real-time sequencing.
+
+---
 
 ## Directory Structure
 ```text
